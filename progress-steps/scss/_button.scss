@@ -1,0 +1,22 @@
+.btn {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    padding: 8px 30px;
+    margin: 8px;
+    font-size: 14px;
+    text-transform: capitalize;
+    &:active {
+        transform: scale(0.98);
+    }
+    &:focus {
+        outline: none;
+    }
+    &:disabled {
+        background-color: #383838;
+        cursor: not-allowed;
+    }
+}
