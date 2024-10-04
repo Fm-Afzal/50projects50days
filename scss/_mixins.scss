@@ -1,0 +1,10 @@
+@mixin d-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin bg-cover {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
