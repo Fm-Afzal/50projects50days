@@ -1,26 +1,40 @@
-const loadText = document.querySelector('.loading-text');
-bg = document.querySelector('.bg');
+const body = document.body
+const slides = document.querySelectorAll('.slide')
+const leftBtn = document.getElementById('left')
+const rightBtn = document.getElementById('right')
 
-let load = 0;
+let activeSlide = 0
 
-let int = setInterval(blurring, 30);
+rightBtn.addEventListener('click', () => {
+  activeSlide++
 
-function blurring() {
-  load++;
-
-  if (load > 99) {
-    clearInterval(int);
+  if (activeSlide > slides.length - 1) {
+    activeSlide = 0
   }
 
-  loadText.innerText = `${load}%`
-  loadText.style.opacity = scale(load, 0, 100, 1, 0)
-  bg.style.filter = `blur(${scale(load, 1, 100, 30,0)}px)`
-  // console.log(scale);
+  setBgToBody()
+  setActiveSlide()
+})
+
+leftBtn.addEventListener('click', () => {
+  activeSlide--
+
+  if (activeSlide < 0) {
+    activeSlide = slides.length - 1
+  }
+
+  setBgToBody()
+  setActiveSlide()
+})
+
+setBgToBody()
+
+function setBgToBody() {
+  body.style.backgroundImage = slides[activeSlide].style.backgroundImage
 }
 
-// https://stackoverflow.com/questions/10756313/javascript-jquery-map-a-range-of-numbers-to-another-range-of-numbers?answertab=scoredesc#tab-top   <-----------> #Reference 
+function setActiveSlide() {
+  slides.forEach((slide) => slide.classList.remove('active'))
 
-
-function scale(number, inMin, inMax, outMin, outMax) {
-  return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+  slides[activeSlide].classList.add('active')
 }

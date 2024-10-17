@@ -4,15 +4,47 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.min.css" />
-    <title>Blurry Loading</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+    <link rel="stylesheet" href="css/style.min.css" />
+    <title>Form Input Wave</title>
 </head>
 
 <body>
-    <section class="bg"></section>
-    <div class="loading-text">0%</div>
 
-    <script src="./js/main.js"></script>
+
+    <div class="slider-container">
+
+        <div class="slide active" style="
+            background-image: url('https://cdn.pixabay.com/photo/2021/07/27/16/52/belgium-6497401_1280.jpg');
+          "></div>
+
+        <div class="slide" style="
+            background-image: url('https://cdn.pixabay.com/photo/2022/02/24/20/24/urban-7033102_1280.jpg');
+          "></div>
+
+        <div class="slide" style="
+            background-image: url('https://cdn.pixabay.com/photo/2013/03/02/02/41/alley-89197_1280.jpg');
+          "></div>
+
+        <div class="slide" style="
+            background-image: url('https://cdn.pixabay.com/photo/2019/11/16/18/43/street-4630827_1280.jpg');
+          "></div>
+
+        <div class="slide" style="
+            background-image: url('https://cdn.pixabay.com/photo/2023/06/14/23/12/sunset-8064078_1280.jpg');
+          "></div>
+
+        <button class="arrow left-arrow" id="left">
+            <i class="fas fa-arrow-left"></i>
+        </button>
+
+        <button class="arrow right-arrow" id="right">
+            <i class="fas fa-arrow-right"></i>
+        </button>
+    </div>
+
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
